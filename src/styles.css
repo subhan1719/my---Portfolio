@@ -62,6 +62,8 @@
   --blue: oklch(0.62 0.2 262);
   --gradient-glow: linear-gradient(120deg, var(--cyan), var(--blue));
   --shadow-glow: 0 0 40px -8px color-mix(in oklab, var(--cyan) 45%, transparent);
+  --duotone-shadow: oklch(0.17 0.06 265);
+  --duotone-highlight: var(--cyan);
 }
 
 @layer base {
@@ -127,4 +129,18 @@
   border-radius: 9999px;
   filter: blur(90px);
   animation: float-slow 14s ease-in-out infinite;
+}
+
+@utility duotone-img {
+  filter: grayscale(1) contrast(1.1) brightness(1.02);
+}
+
+@utility duotone-shadow {
+  background: var(--duotone-shadow);
+  mix-blend-mode: lighten;
+}
+
+@utility duotone-highlight {
+  background: var(--duotone-highlight);
+  mix-blend-mode: darken;
 }

@@ -70,13 +70,17 @@ export function Hero() {
             style={{ backgroundImage: "var(--gradient-glow)" }}
           />
           <div className="glass relative overflow-hidden rounded-[1.75rem] p-3">
-            <img
-              src={portraitAsset.url}
-              alt="Portrait of Subhan Ahmad"
-              width={912}
-              height={912}
-              className="aspect-square w-full rounded-[1.4rem] object-cover"
-            />
+            <div className="relative isolate aspect-square w-full overflow-hidden rounded-[1.4rem]">
+              <img
+                src={portraitAsset.url}
+                alt="Portrait of Subhan Ahmad"
+                width={912}
+                height={912}
+                className="duotone-img h-full w-full object-cover"
+              />
+              <div aria-hidden className="duotone-shadow absolute inset-0" />
+              <div aria-hidden className="duotone-highlight absolute inset-0" />
+            </div>
             <div className="flex items-center justify-between px-3 py-3 font-mono text-[11px] text-muted-foreground">
               <span>status: available</span>
               <span className="text-primary">/* frontend */</span>
