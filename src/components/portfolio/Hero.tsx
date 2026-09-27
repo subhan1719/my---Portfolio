@@ -1,6 +1,6 @@
 import { motion } from "motion/react";
 import { ArrowRight, Sparkles } from "lucide-react";
-import portrait from "@/assets/portrait.jpg";
+import portraitAsset from "@/assets/portrait.png.asset.json";
 
 export function Hero() {
   return (
