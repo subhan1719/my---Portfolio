@@ -15,7 +15,7 @@ import { Section, Reveal } from "./Section";
 const EMAIL = "mrsubhan1719@gmail.com";
 // TODO: replace with real profile URLs once provided.
 const GITHUB_URL = "https://github.com/";
-const LINKEDIN_URL = "https://www.linkedin.com/";
+const LINKEDIN_URL = "https://www.linkedin.com/in/mr-subhan-6435ab3a7/";
 
 type Fields = { name: string; email: string; message: string };
 type Errors = Partial<Record<keyof Fields, string>>;
