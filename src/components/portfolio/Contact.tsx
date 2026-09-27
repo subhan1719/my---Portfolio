@@ -277,6 +277,12 @@ export function Contact() {
                     Or email me directly
                   </a>
                 </div>
+                {copyFailed ? (
+                  <p className="mt-2 flex items-center gap-1.5 pl-6.5 text-xs text-destructive" role="alert">
+                    <AlertCircle className="h-3.5 w-3.5" />
+                    Copying isn't available in this browser — try again or email me directly.
+                  </p>
+                ) : null}
               </motion.div>
             ) : null}
           </AnimatePresence>
