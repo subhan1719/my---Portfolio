@@ -70,7 +70,7 @@ export function Hero() {
             style={{ backgroundImage: "var(--gradient-glow)" }}
           />
           <div className="glass relative overflow-hidden rounded-[1.75rem] p-3">
-            <div className="duotone-frame relative aspect-square w-full overflow-hidden rounded-[1.4rem]">
+            <div className="relative isolate aspect-square w-full overflow-hidden rounded-[1.4rem]">
               <img
                 src={portraitAsset.url}
                 alt="Portrait of Subhan Ahmad"
