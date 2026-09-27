@@ -71,7 +71,7 @@ export function Hero() {
           />
           <div className="glass relative overflow-hidden rounded-[1.75rem] p-3">
             <img
-              src={portrait}
+              src={portraitAsset.url}
               alt="Portrait of Subhan Ahmad"
               width={912}
               height={912}
