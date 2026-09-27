@@ -41,6 +41,7 @@ export function Contact() {
   const [errors, setErrors] = useState<Errors>({});
   const [status, setStatus] = useState<"idle" | "opening" | "sent" | "error">("idle");
   const [copied, setCopied] = useState(false);
+  const [copyFailed, setCopyFailed] = useState(false);
 
   const setField = (key: keyof Fields, value: string) => {
     setForm((f) => ({ ...f, [key]: value }));
@@ -82,7 +83,16 @@ export function Contact() {
       setCopied(true);
       window.setTimeout(() => setCopied(false), 2500);
     } catch {
-      // Clipboard unavailable — the visitor still has the plain text below.
+      // Clipboard API blocked — fall back to a hidden selection + copy command.
+      const scratch = document.createElement("textarea");
+      scratch.value = text;
+      scratch.style.position = "fixed";
+      scratch.style.opacity = "0";
+      document.body.appendChild(scratch);
+      scratch.select();
+      const ok = document.execCommand("copy");
+      document.body.removeChild(scratch);
+      setCopyFailed(!ok);
     }
   };
 
