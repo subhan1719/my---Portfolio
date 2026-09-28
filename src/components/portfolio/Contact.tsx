@@ -13,8 +13,6 @@ import {
 import { Section, Reveal } from "./Section";
 
 const EMAIL = "mrsubhan1719@gmail.com";
-// TODO: replace with real profile URLs once provided.
-const GITHUB_URL = "https://github.com/";
 const LINKEDIN_URL = "https://www.linkedin.com/in/mr-subhan-6435ab3a7/";
 
 type Fields = { name: string; email: string; message: string };
@@ -23,15 +21,20 @@ type Errors = Partial<Record<keyof Fields, string>>;
 const validate = (f: Fields): Errors => {
   const errors: Errors = {};
   if (!f.name.trim()) errors.name = "Please enter your name.";
+  else if (f.name.trim().length > 100) errors.name = "Please keep your name under 100 characters.";
   if (!f.email.trim()) {
     errors.email = "Please enter your email address.";
   } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(f.email.trim())) {
     errors.email = "That email address doesn't look right.";
+  } else if (f.email.trim().length > 255) {
+    errors.email = "Please keep your email under 255 characters.";
   }
   if (!f.message.trim()) {
     errors.message = "Please write a short message.";
   } else if (f.message.trim().length < 10) {
     errors.message = "Message is too short — a few words more, please.";
+  } else if (f.message.trim().length > 1000) {
+    errors.message = "Please keep your message under 1,000 characters.";
   }
   return errors;
 };
@@ -106,12 +109,12 @@ export function Contact() {
   return (
     <Section
       id="contact"
-      eyebrow="Contact"
-      title="Let's build something fast and beautiful"
-      description="Tell me about the product, and I'll reply with a plan."
+      eyebrow="Contact & professional links"
+      title="Have a project in mind? Let’s talk."
+      description="Share what you’re building or connect with me through a professional channel."
     >
       <div className="grid gap-6 lg:grid-cols-[1.1fr_0.9fr]">
-        <Reveal className="glass rounded-2xl p-6 sm:p-8">
+        <Reveal className="glass rounded-lg p-6 sm:p-8">
           <form onSubmit={onSubmit} noValidate className="space-y-4">
             <div>
               <input
@@ -119,6 +122,7 @@ export function Contact() {
                 aria-label="Your name"
                 aria-invalid={!!errors.name}
                 placeholder="Your name"
+                 maxLength={100}
                 value={form.name}
                 onChange={(e) => setField("name", e.target.value)}
                 className={fieldClass("name")}
@@ -146,6 +150,7 @@ export function Contact() {
                 aria-label="Email address"
                 aria-invalid={!!errors.email}
                 placeholder="Email address"
+                 maxLength={255}
                 value={form.email}
                 onChange={(e) => setField("email", e.target.value)}
                 className={fieldClass("email")}
@@ -173,6 +178,7 @@ export function Contact() {
                 aria-label="Message"
                 aria-invalid={!!errors.message}
                 placeholder="What are you building?"
+                 maxLength={1000}
                 value={form.message}
                 onChange={(e) => setField("message", e.target.value)}
                 className={`${fieldClass("message")} resize-none`}
@@ -288,7 +294,7 @@ export function Contact() {
           </AnimatePresence>
         </Reveal>
 
-        <Reveal delay={0.15} className="glass flex flex-col justify-between rounded-2xl p-6 sm:p-8">
+        <Reveal delay={0.15} className="glass flex flex-col justify-between rounded-lg p-6 sm:p-8">
           <div>
             <h3 className="text-lg font-semibold">Direct channels</h3>
             <a
@@ -298,15 +304,10 @@ export function Contact() {
               <Mail className="h-4 w-4 text-primary" />
               {EMAIL}
             </a>
-            <a
-              href={GITHUB_URL}
-              target="_blank"
-              rel="noreferrer"
-              className="mt-4 flex items-center gap-3 text-sm text-muted-foreground transition-colors hover:text-primary"
-            >
+            <div className="mt-4 flex items-center gap-3 text-sm text-muted-foreground" title="GitHub profile URL not supplied yet">
               <Github className="h-4 w-4 text-primary" />
-              GitHub
-            </a>
+              <span>GitHub — profile link coming soon</span>
+            </div>
             <a
               href={LINKEDIN_URL}
               target="_blank"
@@ -317,9 +318,12 @@ export function Contact() {
               LinkedIn
             </a>
           </div>
-          <p className="mt-8 font-mono text-xs text-muted-foreground">
-            Usually replies within 24 hours.
-          </p>
+          <div className="mt-8 border-t border-border pt-5">
+            <p className="font-mono text-xs text-primary">Frontend-only contact form</p>
+            <p className="mt-2 text-xs leading-5 text-muted-foreground">
+              Sending opens your email app with the message prepared. You remain in control of final delivery.
+            </p>
+          </div>
         </Reveal>
       </div>
     </Section>

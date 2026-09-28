@@ -1,35 +1,35 @@
 import { motion } from "motion/react";
-import { Code2, Cpu, Wrench } from "lucide-react";
+import { Code2, Cpu, Search } from "lucide-react";
 import { Section } from "./Section";
 
 const groups = [
   {
     icon: Code2,
-    title: "Frontend Engineering",
-    body: "React.js, Next.js, JavaScript (ES6+), HTML5, CSS3, Tailwind CSS and responsive state management.",
-    chips: ["React.js", "Next.js", "JavaScript", "Tailwind CSS", "HTML5", "CSS3"],
+    title: "Frontend Development",
+    body: "Responsive, accessible interfaces with modern component-driven development.",
+    chips: ["HTML5", "CSS3", "JavaScript", "React.js", "Next.js", "Tailwind CSS"],
   },
   {
     icon: Cpu,
-    title: "Software Engineering Foundations",
-    body: "C++, Java, data structures, algorithms and clean code architecture.",
-    chips: ["C++", "Java", "Data Structures", "Algorithms", "Clean Architecture"],
+    title: "Core Software Engineering",
+    body: "Strong programming fundamentals for building logical and maintainable systems.",
+    chips: ["C++", "C", "Java", "Data Structures", "Problem Solving"],
   },
   {
-    icon: Wrench,
-    title: "Tooling & Ecosystem",
-    body: "Git, GitHub, VS Code, performance optimization and modern web standards.",
-    chips: ["Git", "GitHub", "VS Code", "Performance", "Web Standards"],
+    icon: Search,
+    title: "Digital Marketing & SEO",
+    body: "Search-focused strategy that improves discoverability, relevance and organic performance.",
+    chips: ["Technical SEO", "Keyword Research", "Semrush", "On-Page Optimization"],
   },
 ];
 
 export function Expertise() {
   return (
     <Section
-      id="expertise"
-      eyebrow="Core expertise"
-      title="Technical stack"
-      description="The toolkit behind fast, accessible and maintainable products."
+      id="skills"
+      eyebrow="Skills"
+      title="Development depth meets search strategy"
+      description="A practical toolkit for building polished products and helping them get discovered."
     >
       <motion.div
         className="grid gap-6 md:grid-cols-3"
@@ -46,10 +46,10 @@ export function Expertise() {
               show: { opacity: 1, y: 0, transition: { duration: 0.6 } },
             }}
             whileHover={{ y: -6 }}
-            className="glass rounded-2xl p-6 transition-shadow hover:glow-ring"
+            className="glass rounded-lg p-6 transition-shadow hover:glow-ring"
           >
             <span
-              className="inline-flex h-11 w-11 items-center justify-center rounded-xl text-primary-foreground"
+              className="inline-flex h-11 w-11 items-center justify-center rounded-lg text-primary-foreground"
               style={{ backgroundImage: "var(--gradient-glow)" }}
             >
               <Icon className="h-5 w-5" />

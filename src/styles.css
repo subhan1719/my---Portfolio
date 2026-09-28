@@ -86,7 +86,7 @@
   h2,
   h3 {
     font-family: var(--font-display);
-    letter-spacing: -0.02em;
+    letter-spacing: 0;
   }
 }
 
@@ -114,23 +114,6 @@
   background-size: 64px 64px;
 }
 
-@keyframes float-slow {
-  0%,
-  100% {
-    transform: translate3d(0, 0, 0) scale(1);
-  }
-  50% {
-    transform: translate3d(0, -28px, 0) scale(1.08);
-  }
-}
-
-@utility orb {
-  position: absolute;
-  border-radius: 9999px;
-  filter: blur(90px);
-  animation: float-slow 14s ease-in-out infinite;
-}
-
 @utility duotone-img {
   filter: grayscale(1) contrast(1.1) brightness(1.02);
 }
@@ -143,4 +126,10 @@
 @utility duotone-highlight {
   background: var(--duotone-highlight);
   mix-blend-mode: darken;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
 }
