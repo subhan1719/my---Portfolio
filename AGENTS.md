@@ -8,3 +8,7 @@
 > Commits you push to the connected branch sync back to Lovable and show up in
 > the editor, so keep the branch in a working state.
 <!-- LOVABLE:END -->
+
+## Project architecture
+
+- Keep each portfolio section as a focused component under `src/components/portfolio/` so content and responsive presentation remain independently maintainable.

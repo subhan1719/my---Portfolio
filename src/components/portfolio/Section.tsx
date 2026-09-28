@@ -37,7 +37,7 @@ export function Section({
   children: ReactNode;
 }) {
   return (
-    <section id={id} className="mx-auto w-full max-w-6xl px-6 py-24">
+    <section id={id} className="mx-auto w-full max-w-6xl scroll-mt-20 px-5 py-20 sm:px-6 sm:py-24">
       <Reveal>
         <p className="font-mono text-xs uppercase tracking-[0.3em] text-primary">{eyebrow}</p>
         <h2 className="mt-3 text-3xl font-bold sm:text-4xl">{title}</h2>

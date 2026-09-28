@@ -2,14 +2,15 @@ import { createFileRoute } from "@tanstack/react-router";
 import { Background } from "@/components/portfolio/Background";
 import { Nav } from "@/components/portfolio/Nav";
 import { Hero } from "@/components/portfolio/Hero";
+import { About } from "@/components/portfolio/About";
 import { Expertise } from "@/components/portfolio/Expertise";
 import { Projects } from "@/components/portfolio/Projects";
-import { AiLab } from "@/components/portfolio/AiLab";
+import { Education } from "@/components/portfolio/Education";
 import { Contact } from "@/components/portfolio/Contact";
 
-const title = "Subhan Ahmad — Frontend Engineer & AI Workflow Builder";
+const title = "Subhan Ahmad — Frontend Web Developer & SEO Specialist";
 const description =
-  "Portfolio of Subhan Ahmad: high-performance web applications, fluid interfaces and AI-driven automation built with React, Next.js and Tailwind CSS.";
+  "Portfolio of Subhan Ahmad, a frontend web developer and SEO specialist building clean, high-performance websites and organic growth strategies.";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -32,13 +33,14 @@ function Index() {
       <Nav />
       <main>
         <Hero />
+        <About />
         <Expertise />
         <Projects />
-        <AiLab />
+        <Education />
         <Contact />
       </main>
       <footer className="border-t border-border/60 py-8 text-center font-mono text-xs text-muted-foreground">
-        © {new Date().getFullYear()} Subhan Ahmad — built with React &amp; Tailwind CSS
+        © {new Date().getFullYear()} Subhan Ahmad — Frontend Web Developer &amp; SEO Specialist
       </footer>
     </div>
   );
