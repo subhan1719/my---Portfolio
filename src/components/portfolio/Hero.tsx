@@ -1,6 +1,6 @@
 import { motion } from "motion/react";
 import { ArrowRight, MapPin, Sparkles } from "lucide-react";
-import portraitAsset from "@/assets/portrait.png.asset.json";
+import portrait from "@/assets/portrait.jpg";
 
 export function Hero() {
   return (
@@ -95,7 +95,7 @@ export function Hero() {
           <div className="glass relative overflow-hidden rounded-2xl p-3 shadow-2xl">
             <div className="relative isolate aspect-[4/5] w-full overflow-hidden rounded-xl">
               <img
-                src={portraitAsset.url}
+                src={portrait}
                 alt="Portrait of Subhan Ahmad"
                 width={912}
                 height={912}
