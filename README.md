@@ -4,7 +4,7 @@ Implement exactly the screenshot and nothing else
 
 This project was built with [Lovable](https://lovable.dev).
 
-**Live app**: https://pixel-perfect-view-9178.lovable.app
+**Live app**: https://vercel.com/subhan-ahmad/my-portfolio
 
 ## Build with Lovable
 
