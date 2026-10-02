@@ -6,7 +6,7 @@ export function Typing({ words }: { words: string[] }) {
   const [deleting, setDeleting] = useState(false);
 
   useEffect(() => {
-    const word = words[i % words.length];
+    const word = words[i % words.length] ?? "";
     let delay = deleting ? 45 : 85;
     if (!deleting && text === word) delay = 1600;
     if (deleting && text === "") delay = 300;
