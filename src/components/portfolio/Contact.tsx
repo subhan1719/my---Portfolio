@@ -304,10 +304,15 @@ export function Contact() {
               <Mail className="h-4 w-4 text-primary" />
               {EMAIL}
             </a>
-            <div className="mt-4 flex items-center gap-3 text-sm text-muted-foreground" title="GitHub profile URL not supplied yet">
+            <a
+              href="https://github.com/subhan1719?tab=repositories"
+              target="_blank"
+              rel="noreferrer"
+              className="mt-4 flex items-center gap-3 text-sm text-muted-foreground transition-colors hover:text-primary"
+            >
               <Github className="h-4 w-4 text-primary" />
-              <span>GitHub — profile link coming soon</span>
-            </div>
+              GitHub — subhan1719
+            </a>
             <a
               href={LINKEDIN_URL}
               target="_blank"

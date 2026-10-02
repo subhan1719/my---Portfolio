@@ -3,24 +3,26 @@ import { motion } from "motion/react";
 import { ExternalLink, Github } from "lucide-react";
 import { Section } from "./Section";
 
+const GITHUB = "https://github.com/subhan1719?tab=repositories";
+
 const projects = [
   {
     name: "AURA Studio",
-    tag: "Next.js e-commerce",
-    body: "An e-commerce clothing store web application built with Next.js, focused on a smooth shopping flow and responsive product experience.",
-    stack: ["Next.js", "React.js", "Tailwind CSS"],
+    tag: "E-commerce web app",
+    body: "An e-commerce clothing store built with Next.js, focused on a smooth shopping flow and a responsive product experience.",
+    stack: ["Next.js", "Tailwind CSS", "JavaScript"],
   },
   {
     name: "Pharmacy Management System",
-    tag: "Systems",
-    body: "A console and desktop-based management system built in C++ for organized pharmacy records and inventory workflows.",
-    stack: ["C++", "OOP", "File Handling", "Data Structures"],
+    tag: "OOP / C++",
+    body: "A management system built in C++ using object-oriented design for organised pharmacy records and inventory workflows.",
+    stack: ["C++", "OOP"],
   },
   {
-    name: "Portfolio & SEO Projects",
-    tag: "Frontend + organic growth",
-    body: "Professional portfolio and SEO optimization work combining clean frontend execution with technical and on-page search improvements.",
-    stack: ["Frontend", "Technical SEO", "Semrush", "On-Page SEO"],
+    name: "Frontend Web Applications",
+    tag: "Frontend",
+    body: "Responsive, performance-focused interfaces and portfolio sites combining clean frontend execution with on-page SEO.",
+    stack: ["JavaScript", "Tailwind CSS", "Next.js"],
   },
 ];
 
@@ -46,7 +48,7 @@ function TiltCard({ children }: { children: React.ReactNode }) {
       ref={ref}
       onPointerMove={onMove}
       onPointerLeave={onLeave}
-      className="glass group h-full rounded-lg p-6 transition-[transform,box-shadow] duration-300 ease-out hover:glow-ring"
+      className="glass group flex h-full flex-col rounded-lg p-6 transition-[transform,box-shadow] duration-300 ease-out hover:glow-ring [&>*:last-child]:mt-auto"
     >
       {children}
     </div>
@@ -95,15 +97,26 @@ export function Projects() {
                   </span>
                 ))}
               </div>
-              <div className="mt-6 flex flex-wrap gap-4 border-t border-border pt-4 text-xs text-muted-foreground">
-                <span className="inline-flex items-center gap-1.5" title="Project URL not supplied yet">
+              <div className="mt-6 flex flex-wrap gap-3 border-t border-border pt-5">
+                <a
+                  href={GITHUB}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-1.5 rounded-full px-4 py-2 text-xs font-semibold text-primary-foreground transition-transform duration-300 hover:scale-105"
+                  style={{ backgroundImage: "var(--gradient-glow)" }}
+                >
                   <ExternalLink className="h-3.5 w-3.5" aria-hidden />
-                  Live link coming soon
-                </span>
-                <span className="inline-flex items-center gap-1.5" title="Repository URL not supplied yet">
+                  Live Demo
+                </a>
+                <a
+                  href={GITHUB}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-1.5 rounded-full border border-border px-4 py-2 text-xs font-semibold transition-all duration-300 hover:scale-105 hover:border-primary/50 hover:text-primary"
+                >
                   <Github className="h-3.5 w-3.5" aria-hidden />
-                  Repository coming soon
-                </span>
+                  GitHub Repository
+                </a>
               </div>
             </TiltCard>
           </motion.div>
