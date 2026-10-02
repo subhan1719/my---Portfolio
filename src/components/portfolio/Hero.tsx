@@ -1,6 +1,10 @@
 import { motion } from "motion/react";
-import { ArrowRight, MapPin, Sparkles } from "lucide-react";
+import { ArrowRight, Github, MapPin, Sparkles } from "lucide-react";
 import portrait from "@/assets/portrait.jpg";
+import { Typing } from "./Typing";
+
+export const GITHUB_URL = "https://github.com/subhan1719?tab=repositories";
+const TITLES = ["Software Engineering Student", "Frontend Developer", "SEO Specialist"];
 
 export function Hero() {
   return (
@@ -30,13 +34,9 @@ export function Hero() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.16 }}
-            className="mt-5 max-w-2xl text-lg font-medium leading-7 text-foreground sm:text-xl"
+            className="mt-5 min-h-[2rem] text-xl font-semibold sm:text-2xl"
           >
-            Frontend Web Developer &amp; SEO Specialist
-            <span className="mt-1 block text-base font-normal text-muted-foreground">
-              Software Engineering Undergraduate Student at Superior University
-              Faisalabad Campus
-            </span>
+            <Typing words={TITLES} />
           </motion.p>
 
           <motion.p
@@ -45,8 +45,9 @@ export function Hero() {
             transition={{ duration: 0.7, delay: 0.24 }}
             className="mt-6 max-w-xl text-base leading-7 text-muted-foreground sm:text-lg"
           >
-            I build clean, high-performance web solutions that turn attention into
-            action—and pair them with SEO strategy that drives sustainable organic growth.
+            Software Engineering undergraduate at Superior University, Frontend Developer
+            and SEO Specialist — building clean, high-performance web experiences that
+            rank well and convert.
           </motion.p>
 
           <motion.p
@@ -67,17 +68,26 @@ export function Hero() {
           >
             <a
               href="#projects"
-              className="glow-ring group inline-flex items-center gap-2 rounded-full px-6 py-3 text-sm font-semibold text-primary-foreground transition-transform hover:scale-[1.04]"
+              className="glow-ring group inline-flex items-center gap-2 rounded-full px-6 py-3 text-sm font-semibold text-primary-foreground transition-transform duration-300 hover:scale-105"
               style={{ backgroundImage: "var(--gradient-glow)" }}
             >
               View projects
               <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
             </a>
             <a
-              href="#contact"
-              className="glass inline-flex items-center gap-2 rounded-full px-6 py-3 text-sm font-semibold transition-colors hover:border-primary/50 hover:text-primary"
+              href={GITHUB_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="glass inline-flex items-center gap-2 rounded-full px-6 py-3 text-sm font-semibold transition-all duration-300 hover:scale-105 hover:border-primary/50 hover:text-primary hover:glow-ring"
             >
-              Let&apos;s work together
+              <Github className="h-4 w-4" />
+              GitHub Profile
+            </a>
+            <a
+              href="#contact"
+              className="inline-flex items-center gap-2 rounded-full px-4 py-3 text-sm font-semibold text-muted-foreground transition-colors hover:text-primary"
+            >
+              Contact me
             </a>
           </motion.div>
         </div>
